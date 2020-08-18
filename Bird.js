@@ -11,13 +11,13 @@ class Bird extends BaseClass {
     //this.body.position.y = mouseY;
 
     super.display();
-
+    //tracking the bird
     if(this.body.velocity.x > 10 && this.body.position.x > 200){
       var position = [this.body.position.x, this.body.position.y];
       this.trajectory.push(position);
     }
    
-
+   //adding the smoke images to wherever the bird has been tracked
     for(var i=0; i<this.trajectory.length; i++){
       image(this.smokeImage, this.trajectory[i][0], this.trajectory[i][1]);
     }
